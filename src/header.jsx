@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import "./header.scss";
+import "./stylesheet/header.scss";
 let Header = props => {
   return (
     <div className="header">

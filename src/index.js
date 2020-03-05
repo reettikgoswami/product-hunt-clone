@@ -2,7 +2,7 @@ import React from "react"
 import ReactDom from "react-dom";
 import Card from "./card";
 import Header from "./header"
-import "./style.scss";
+import "./stylesheet/style.scss";
 import Contributers from "./col2"
 let data = [
 {

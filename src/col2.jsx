@@ -1,5 +1,5 @@
 import React from "react"
-import "./col2.scss";
+import "./stylesheet/col2.scss";
 let contributers = (props)=>{
   return ( 
      <span className="contributer_img">

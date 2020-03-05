@@ -1,5 +1,5 @@
 import React from "react";
-import "./card.scss";
+import "./stylesheet/card.scss";
 let Card = props => {
   return (
     <div className="product_container">

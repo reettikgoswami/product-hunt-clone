@@ -1,5 +1,6 @@
 import React from "react";
 import "./stylesheet/card.scss";
+
 let Card = props => {
   return (
     <div className="product_container">
@@ -13,9 +14,9 @@ let Card = props => {
           <button className="product_tag">{tag}</button>
         ))}
       </div>
-      <div className="upvote_container">
+      <div onClick={()=>props.updateCount(props.id)} className="upvote_container">
         <div className="vote">
-          <span className="upvote_icon">&#x2B06;</span>
+          <span  className="upvote_icon"> &#9652;</span>
           <span className="upvote_number">{props.upvote}</span>
         </div>
       </div>

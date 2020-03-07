@@ -4,10 +4,6 @@ import Header from "./header";
 import "./stylesheet/style.scss";
 import Sidebar from "./sidebar";
 import ProductSection from "./productSection";
-let obj = {
-  id: Date.now(),
-  upvote: 0
-};
 
 let user = [
   {
@@ -79,12 +75,15 @@ class Cards extends React.Component {
     this.setState({ data: updateVote });
   };
 
-  updateState = obj => {
-    this.setState({ data: this.state.data.concat(obj) });
-  };
+  addproduct = obj =>{
+    obj.topics = obj.topics.split(",").map(tag=>{
+      return {name : tag};
+    })
+   obj.id = Date.now();
+   this.setState({data : this.state.data.concat(obj)});
+  }
  
  componentDidMount(){ 
-
    fetch("https://api.producthunt.com/v1/posts" , {
     method: 'GET',
     headers: {
@@ -110,7 +109,7 @@ class Cards extends React.Component {
 
          <ProductSection product={this.state.data} updateCount={this.updateCount} />
          
-         <Sidebar user={user} />
+         <Sidebar user={user} addproduct = {this.addproduct}/>
 
         </div>
       </>

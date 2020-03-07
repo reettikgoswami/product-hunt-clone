@@ -1,8 +1,15 @@
 import React from "react"
-import Contributers from "./col2";
+import Contributers from "./onlineSection";
 import Newsletter from "./newsletter";
 
-import "./stylesheet/col2.scss"
+import "./stylesheet/style.scss"
+
+let obj = {thumbnail :{
+  image_url : null
+},
+topics: null ,
+votes_count : 0
+}
 
 function Sidebar(props){
 return (
@@ -16,33 +23,36 @@ return (
             <h4 className="start_working_heading">start working now</h4>
              <Newsletter/>
               <div className="newsletter_subscribe_container">
-                {/* <from>
-                  <input
-                    onChange={e => (obj.name = e.target.value)}
+
+                <from className="add_product_form">
+                  <input  
+                      onChange={e => (obj.name = e.target.value)} 
                     className="subscribe_input"
                     placeholder="product name"
                   ></input>
                   <input
-                    onChange={e => (obj.img = e.target.value)}
+                  onChange={e => (obj.thumbnail.image_url = e.target.value)}            
                     className="subscribe_input"
                     placeholder="product image"
                   ></input>
                   <input
-                    onChange={e => (obj.tags = e.target.value.split(" "))}
+                  onChange={e => (obj.topics = e.target.value)} 
                     className="subscribe_input"
                     placeholder="product tag"
                   ></input>
-                  <input
-                    onChange={e => (obj.description = e.target.value)}
+                  <input 
+                  onChange={e => (obj.tagline = e.target.value)}    
                     className="subscribe_input"
                     placeholder="product description"
                   ></input>
-                  <input
-                    onClick={e => this.updateState(obj)}
+
+                  <button 
+                    onClick={e=> props.addproduct(obj)}             
                     className="subscribe"
                     type="submit"
-                  ></input>
-                </from> */}
+                  >add product</button>
+                </from>
+
             </div> 
           </div>)
 

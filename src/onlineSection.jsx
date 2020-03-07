@@ -1,5 +1,5 @@
 import React from "react"
-import "./stylesheet/col2.scss";
+import "./stylesheet/onlineSection.scss";
 
 function contributers(props){
   return ( 

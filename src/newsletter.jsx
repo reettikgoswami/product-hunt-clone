@@ -1,8 +1,8 @@
 import React from "react";
-
 import "./stylesheet/style.scss";
 
-let Newsletter = () => {
+
+function Newsletter(){
   return (
     <div>
       <h4 className="newsletter_header">newsletter</h4>
@@ -19,7 +19,7 @@ let Newsletter = () => {
         </span>
         <div className="newsletter_subscribe_container">
           <p className="subscribe_quote">
-            Get the best new products in your inbox, every day{" "}
+            Get the best new products in your inbox, every day
             <span role="img" aria-label="jsx-a11y/accessible-emoji">
               👇
             </span>
@@ -29,7 +29,7 @@ let Newsletter = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default Newsletter;

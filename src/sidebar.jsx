@@ -4,11 +4,10 @@ import Newsletter from "./newsletter";
 
 import "./stylesheet/style.scss"
 
-let obj = {thumbnail :{
-  image_url : null
-},
-topics: null ,
-votes_count : 0
+let obj = {
+  thumbnail :{ image_url : null},
+  topics: null ,
+  votes_count : 0
 }
 
 function Sidebar(props){
@@ -52,11 +51,9 @@ return (
                     type="submit"
                   >add product</button>
                 </from>
-
             </div> 
           </div>)
-
-              }         
+    }         
 
 
 export default Sidebar;              

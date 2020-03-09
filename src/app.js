@@ -1,9 +1,10 @@
 import React from "react";
-
 import Header from "./header";
 import "./stylesheet/style.scss";
 import Sidebar from "./sidebar";
 import ProductSection from "./productSection";
+
+require('dotenv').config();
 
 let user = [
   {
@@ -56,13 +57,13 @@ let user = [
   }
 ];
 
-
-class Cards extends React.Component {
+class Cards extends React.Component {                                                                                                                                                                                  
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
-      img: user
+      data: [], 
+      img: user,
+      token : process.env.REACT_APP_SECRET
     };
   }
   updateCount = id => {    
@@ -84,17 +85,20 @@ class Cards extends React.Component {
   }
  
  componentDidMount(){ 
+   
    fetch("https://api.producthunt.com/v1/posts" , {
     method: 'GET',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer '.concat("uuHisA0iPQoAc_FQ6pAzXPlsDbtuvbEqHORprrWdADY"),
+      'Authorization': `Bearer ${this.state.token}`,
       'Host': 'api.producthunt.com'
     }
    })
    .then((response) => response.json())
       .then((responseData) => {
+        console.log("token" , process.env.REACT_APP_SECRET);
+        console.log(responseData);
         this.setState({data : responseData.posts});
       })
       .catch(err=>{console.log(err)});
@@ -117,5 +121,4 @@ class Cards extends React.Component {
   }
 }
 
-
-export default Cards;
+export default Cards;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
